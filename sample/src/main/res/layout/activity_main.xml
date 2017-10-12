@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:padding="10dp"
+        android:text="No background TextView"
+        android:textColor="#FFF" />
+
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/circular_button"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Resources background Button"
+        android:textAllCaps="false" />
+
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ImageView ↓ with color background"
+        android:textColor="#FFF" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        android:clickable="true"
+        android:minHeight="100dp"
+        android:minWidth="100dp"
+        android:padding="10dp"
+        android:scaleType="center"
+        android:src="@mipmap/ic_launcher" />
+
+</LinearLayout>
