@@ -23,5 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         View view = findViewById(R.id.imageView);
         PressCompat.pressableBackground(view);
+
+        View imageButton = findViewById(R.id.imageButton);
+        PressCompat.pressableBackground(imageButton);
     }
 }

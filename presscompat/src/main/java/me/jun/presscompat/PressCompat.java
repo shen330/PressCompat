@@ -61,7 +61,7 @@ public final class PressCompat {
             int color = getPressColorInTheme(view.getContext());
             Drawable newBackground = getPressableDrawable(background, color);
             view.setBackground(newBackground);
-            //newBackground.invalidateSelf(); // FIXME: 12/10/2017
+            newBackground.invalidateSelf();
         }
 
         private static int getPressColorInTheme(Context context) {
@@ -86,11 +86,15 @@ public final class PressCompat {
         @Override
         public Drawable getPressableDrawable(@Nullable Drawable original, @ColorInt int color) {
             FilterableStateListDrawable drawable = new FilterableStateListDrawable();
-            if (original == null) {
+            if (original == null) { //original view had no background
                 drawable.addState(PRESS_STATE_SET, new ColorDrawable(color));
                 return drawable;
             }
             if (original instanceof ColorDrawable) {
+                /*
+                 * Sets color filter applied to ColorDrawable only supported on version LOLLIPOP and above.
+                 * Calling this method has no effect on earlier versions.
+                 */
                 drawable.addState(PRESS_STATE_SET, new ColorDrawable(color));
             } else {
                 drawable.addState(PRESS_STATE_SET, original, color);

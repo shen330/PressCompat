@@ -24,6 +24,10 @@ def isReleaseBuild() {
     return VERSION_NAME.contains("SNAPSHOT") == false
 }
 
+def isAndroidProject() {
+    return project.getPlugins().hasPlugin('com.android.application') || project.getPlugins().hasPlugin('com.android.library')
+}
+
 def getReleaseRepositoryUrl() {
     return hasProperty('RELEASE_REPOSITORY_URL') ? RELEASE_REPOSITORY_URL
             : "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
@@ -36,10 +40,6 @@ def getSnapshotRepositoryUrl() {
 
 def getRepositoryUsername() {
     return hasProperty('SONATYPE_NEXUS_USERNAME') ? property('SONATYPE_NEXUS_USERNAME') : ""
-}
-
-def isAndroidProject() {
-    return project.getPlugins().hasPlugin('com.android.application') || project.getPlugins().hasPlugin('com.android.library')
 }
 
 def getRepositoryPassword() {
@@ -70,11 +70,11 @@ afterEvaluate {
                         description POM_DESCRIPTION
                         url POM_URL
 
-                        scm {
-                            url POM_SCM_URL
-                            connection POM_SCM_CONNECTION
-                            developerConnection POM_SCM_DEV_CONNECTION
-                        }
+//                        scm {
+//                            url POM_SCM_URL
+//                            connection POM_SCM_CONNECTION
+//                            developerConnection POM_SCM_DEV_CONNECTION
+//                        }
 
                         licenses {
                             license {
@@ -89,10 +89,10 @@ afterEvaluate {
                                 id POM_DEVELOPER_ID
                                 name POM_DEVELOPER_NAME
                             }
-                            developer {
-                                id POM_DEVELOPER_ID2
-                                name POM_DEVELOPER_NAME2
-                            }
+//                            dev eloper {
+//                                id POM_DEVELOPER_ID2
+//                                name POM_DEVELOPER_NAME2
+//                            }
                         }
                     }
                 }
@@ -119,11 +119,11 @@ afterEvaluate {
                         description POM_DESCRIPTION
                         url POM_URL
 
-                        scm {
-                            url POM_SCM_URL
-                            connection POM_SCM_CONNECTION
-                            developerConnection POM_SCM_DEV_CONNECTION
-                        }
+//                        scm {
+//                            url POM_SCM_URL
+//                            connection POM_SCM_CONNECTION
+//                            developerConnection POM_SCM_DEV_CONNECTION
+//                        }
 
                         licenses {
                             license {
@@ -138,10 +138,10 @@ afterEvaluate {
                                 id POM_DEVELOPER_ID
                                 name POM_DEVELOPER_NAME
                             }
-                            developer {
-                                id POM_DEVELOPER_ID2
-                                name POM_DEVELOPER_NAME2
-                            }
+//                            dev eloper {
+//                                id POM_DEVELOPER_ID2
+//                                name POM_DEVELOPER_NAME2
+//                            }
                         }
                     }
                 }
@@ -175,11 +175,11 @@ afterEvaluate {
                         description POM_DESCRIPTION
                         url POM_URL
 
-                        scm {
-                            url POM_SCM_URL
-                            connection POM_SCM_CONNECTION
-                            developerConnection POM_SCM_DEV_CONNECTION
-                        }
+//                        scm {
+//                            url POM_SCM_URL
+//                            connection POM_SCM_CONNECTION
+//                            developerConnection POM_SCM_DEV_CONNECTION
+//                        }
 
                         licenses {
                             license {
@@ -194,10 +194,10 @@ afterEvaluate {
                                 id POM_DEVELOPER_ID
                                 name POM_DEVELOPER_NAME
                             }
-                            developer {
-                                id POM_DEVELOPER_ID2
-                                name POM_DEVELOPER_NAME2
-                            }
+//                            dev eloper {
+//                                id POM_DEVELOPER_ID2
+//                                name POM_DEVELOPER_NAME2
+//                            }
                         }
                     }
                 }

@@ -41,7 +41,7 @@ final class FilterableStateListDrawable extends StateListDrawable {
      */
     void addState(int[] stateSet, Drawable drawable, int color) {
         int currChild = childrenCount;
-        filterMap.put(currChild, new LightingColorFilter(0x000000, color));
+        filterMap.put(currChild, new LightingColorFilter(0x0, color));
         addState(stateSet, drawable);
     }
 
